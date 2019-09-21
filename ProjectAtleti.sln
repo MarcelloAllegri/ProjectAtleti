@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectAtleti", "ProjectAtleti.csproj", "{C78C8770-A046-49E6-9005-0747CEE133EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbLibrary", "..\DbLibrary\DbLibrary.csproj", "{322CFE2E-AE6C-4B32-BEC0-6B09287231D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C78C8770-A046-49E6-9005-0747CEE133EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78C8770-A046-49E6-9005-0747CEE133EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78C8770-A046-49E6-9005-0747CEE133EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78C8770-A046-49E6-9005-0747CEE133EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{322CFE2E-AE6C-4B32-BEC0-6B09287231D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{322CFE2E-AE6C-4B32-BEC0-6B09287231D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{322CFE2E-AE6C-4B32-BEC0-6B09287231D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{322CFE2E-AE6C-4B32-BEC0-6B09287231D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A0A63C3-43D0-40BF-9FBE-AD51E2F9F339}
+	EndGlobalSection
+EndGlobal
