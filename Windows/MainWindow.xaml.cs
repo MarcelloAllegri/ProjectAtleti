@@ -71,7 +71,7 @@ namespace ProjectAtleti
 
                 this.AtletaTabItem.IsSelected = true;
                 this.TabControl.UpdateLayout();
-                this.atletaUserControl.DataContext = selectedItem as AtletaEntity;
+                this.atletaUserControl.DataContext = selectedItem as AtletaEntity;               
             }
         }
         internal void DeleteAtleta()

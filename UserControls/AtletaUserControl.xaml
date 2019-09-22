@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ProjectAtleti.UserControls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             Name="atletaUC"
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="AtletaUC_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -21,5 +23,35 @@
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Codice Fiscale" Margin="0,5,0,0"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="0,5,0,0" Grid.ColumnSpan="2" MaxLength="16"
+                 Text="{Binding ElementName=atletaUC,Path=DataContext.FiscalCode,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Cognome" Margin="0,5,0,0"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="0,5,0,0" Grid.ColumnSpan="2"
+                 Text="{Binding ElementName=atletaUC,Path=DataContext.Surname,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Nome" Margin="0,5,0,0"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="0,5,0,0" Grid.ColumnSpan="2"
+                 Text="{Binding ElementName=atletaUC,Path=DataContext.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Data di nascita" Margin="0,5,0,0"/>
+        <DatePicker Grid.Row="3" Grid.Column="1" Margin="0,5,0,0" Grid.ColumnSpan="2"
+                    SelectedDate="{Binding ElementName=atletaUC,Path=DataContext.BirthDay,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                    SelectedDateFormat="Short"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Sesso" Margin="0,5,0,0"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" Margin="0,5,0,0" Name="SexChooserComboBox"
+                  SelectedValue="{Binding ElementName=atletaUC,Path=DataContext.Sex,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                  SelectedValuePath="Key"
+                  DisplayMemberPath="Value"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Nr Cartellino" Margin="0,5,0,0"/>
+        <xctk:IntegerUpDown Grid.Row="5" Grid.Column="1" Margin="0,5,0,0"
+                            Minimum="1"
+                            FormatString="N0"
+                            ShowButtonSpinner="False"
+                            Value="{Binding ElementName=atletaUC,Path=DataContext.NrCartellino,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </UserControl>

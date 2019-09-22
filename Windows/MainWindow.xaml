@@ -70,7 +70,7 @@
                             <GridViewColumn Header="Codice Fiscale" Width="250" DisplayMemberBinding="{Binding Path=FiscalCode}" />
                             <GridViewColumn Header="Cognome" Width="250" DisplayMemberBinding="{Binding Path=Surname}"/>
                             <GridViewColumn Header="Nome" Width="250" DisplayMemberBinding="{Binding Path=Name}"/>                            
-                            <GridViewColumn Header="Sesso" Width="100" DisplayMemberBinding="{Binding Path=Sex}"/>
+                            <GridViewColumn Header="Sesso" Width="100" DisplayMemberBinding="{Binding Path=SexString}"/>
                             <GridViewColumn Header="Nr Cartellino" Width="100" DisplayMemberBinding="{Binding Path=NrCartellino}"/>                            
                             <GridView.ColumnHeaderContainerStyle>
                                 <Style TargetType="{x:Type GridViewColumnHeader}">

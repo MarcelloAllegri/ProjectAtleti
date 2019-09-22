@@ -62,7 +62,7 @@ namespace ProjectAtleti.Service
             {
                 using (var db = new AtletiDbEntities())
                 {
-                    db.Atleta.Remove(atleta.ToDbAtleta());
+                    db.Atleta.Remove(db.Atleta.First(x=> x.AtletaId == atleta.AtletaId));
                     db.SaveChanges();
                 }
                 return 0;
@@ -95,7 +95,7 @@ namespace ProjectAtleti.Service
     public static class AtletaDBMapper
     {
         public static AtletaEntity ToAtletaEntity(this Atleta atleta)
-        {             
+        {
             return new AtletaEntity()
             {
                 AtletaId = atleta.AtletaId,
@@ -104,7 +104,7 @@ namespace ProjectAtleti.Service
                 BirthDay = atleta.AtletaBirthday,
                 FiscalCode = atleta.AtletaCFD,
                 NrCartellino = atleta.AtletaNrCartellino,
-                Sex = atleta.AtletaSex
+                Sex = Convert.ToChar(atleta.AtletaSex),
             };
         }
 
@@ -119,7 +119,7 @@ namespace ProjectAtleti.Service
             atleta.AtletaBirthday = atletaEntity.BirthDay;
             atleta.AtletaCFD = atletaEntity.FiscalCode;
             atleta.AtletaNrCartellino = atletaEntity.NrCartellino;
-            atleta.AtletaSex = atletaEntity.Sex;
+            atleta.AtletaSex = atletaEntity.Sex.ToString();
 
             return atleta;
         }
