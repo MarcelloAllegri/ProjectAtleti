@@ -45,12 +45,26 @@ namespace ProjectAtleti
         }
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
+
+        private bool UserFilter(object item)
+        {
+            if (String.IsNullOrEmpty(FilterTextBox.Text))
+                return true;
+            else
+                return 
+                    ((item as AtletaEntity).Name.IndexOf(FilterTextBox.Text, StringComparison.OrdinalIgnoreCase) >= 0)
+                    || ((item as AtletaEntity).Surname.IndexOf(FilterTextBox.Text, StringComparison.OrdinalIgnoreCase) >= 0)
+                    || ((item as AtletaEntity).FiscalCode.IndexOf(FilterTextBox.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
         private void AtletiListWindow_Loaded(object sender, RoutedEventArgs e)
         {
             this.FilterText = string.Empty;
             this.RefreshList();
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(lvAtleti.ItemsSource);
+            view.Filter = UserFilter;
         }
         private void RefreshList()
         {
@@ -114,6 +128,11 @@ namespace ProjectAtleti
 
             atletaUserControl.DataContext = new AtletaEntity();
             RefreshList();
+        }
+
+        private void FilterTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(lvAtleti.ItemsSource).Refresh();
         }
     }
 }

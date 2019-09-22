@@ -47,6 +47,7 @@
             
             <TextBlock Text=" Filtro:" Margin="0,5,0,5" x:Name="FiltroLabel"/>
             <TextBox x:Name="FilterTextBox" Text="{Binding ElementName=AtletiListWindow,Path=FilterText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                     TextChanged="FilterTextBox_TextChanged"
                      Width="200" Margin="5,5,0,0"/>
 
             <Button x:Name="SaveButton" Visibility="Collapsed"
